@@ -42,10 +42,6 @@ wb.SheetNames = [];
 
 
 const createSheet = (data,sheetName) => {
-	console.log(data);
-	if(sheetName=="dataElements") data = data.dataElements;
-	if(sheetName=="organisationUnits") data = data.organisationUnits;
-	if(sheetName=="indicators") data = data.indicators;
 	const ws_name = sheetName;
   
 	// create worksheet:
@@ -54,7 +50,7 @@ const createSheet = (data,sheetName) => {
 	// the range object is used to keep track of the range of the sheet
 	var range = {s: {c:0, r:0}, e: {c:100, r:0 }};
 	
-	data.forEach( (row,index) => {
+	data[sheetName].forEach( (row,index) => {
 		
 		Object.keys( row )
 		//.forEach( k => wjf.sync( regions[k].filename, regions[k].data ) );
