@@ -74,9 +74,9 @@ const createSheet = (data,sheetName) => {
 };
 
 
-const loadJson = i => {
-	console.log(i);
-	if(i==config.sheets.length){
+const loadJson = count => {
+	//console.log(i);
+	if(count==config.sheets.length){
 		config.sheets.forEach( sheet => {
 			createSheet(sheet.data,sheet.sheetName);
 		});
@@ -85,7 +85,7 @@ const loadJson = i => {
 	}
 }
 
-let i = 0;
+let count = 0;
 config.sheets.forEach( sheet => {
 	fetch(
 		sheet.url,
@@ -98,9 +98,9 @@ config.sheets.forEach( sheet => {
 	.then( result => result.json() )
 	.then( data => {
 		sheet.data = data;
-		i++;
+		count++;
 		//createSheet( data, sheet.sheetName );
-		loadJson(i);
+		loadJson(count);
 	} );
 });
 
