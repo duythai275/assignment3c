@@ -21,13 +21,13 @@ const fetchFromDhis2 = url => {
 const config = {
 	sheets: [{
 		sheetName: "dataElements",
-		url: "https://hmis.gov.la/api/dataElements.json?fields=:identifiable&paging=false"
+		url: "https://play.dhis2.org/demo/api/dataElements.json?fields=:identifiable&paging=false"
 	}, {
 		sheetName: "organisationUnits",
-		url: "https://hmis.gov.la/api/organisationUnits.json?fields=:identifiable&paging=false"
+		url: "https://play.dhis2.org/demo/api/organisationUnits.json?fields=:identifiable&paging=false"
 	}, {
 		sheetName: "indicators",
-		url: "https://hmis.gov.la/api/indicators.json?fields=:identifiable&paging=false"
+		url: "https://play.dhis2.org/demo/api/indicators.json?fields=:identifiable&paging=false"
 	}]
 };
 
